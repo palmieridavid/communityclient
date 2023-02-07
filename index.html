@@ -10,8 +10,8 @@
     <header>
       <h1>Volunteering Opportunities Near Me</h1>
       <button id="openFormButton">Add An Opportunity</button> 
-    </header>
-    <form id="newPostForm" style="display:none;">
+    
+     <form id="newPostForm" style="display:none;">
         <label>Photo:</label>
         <input type="file" id="photoInput">
 
@@ -22,7 +22,12 @@
         <textarea id="descriptionInput"></textarea>
 
         <button type="submit">Submit</button>
-    </form>
+     </form>
+
+    <div id="postsContainer">
+      <!-- Posts will be added here dynamically -->
+    </div>
+    </header>
     <main>
       <div id="ads-container">
         <div class="ad">
@@ -37,3 +42,8 @@
     </footer>
   </body>
 </html>
+
+
+
+
+
