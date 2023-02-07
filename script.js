@@ -1,16 +1,28 @@
-$(document).ready(function() {
-  // Show the add advertisement form when the button is clicked
-  $("#add-ad-button").click(function() {
-    let form = `
-      <form id="add-ad-form">
-        <div>
-          <label for="photo">Photo:</label>
-          <input type="text" id="photo" name="photo">
-        </div>
-        <div>
-          <label for="heading">Heading:</label>
-          <input type="text" id="heading" name="heading">
-        </div>
-        <div>
-          <label for="description">Description:</label>
-          <textarea id="description" name="
+const openFormButton = document.getElementById('openFormButton');
+const newPostForm = document.getElementById('newPostForm');
+const postsContainer = document.getElementById('postsContainer');
+const submitButton = document.querySelector('form button[type="submit"]');
+
+openFormButton.addEventListener('click', function() {
+  newPostForm.style.display = 'block';
+});
+
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const photo = document.getElementById('photoInput').files[0];
+  const heading = document.getElementById('headingInput').value;
+  const description = document.getElementById('descriptionInput').value;
+
+  const postHTML = `
+    <div class="post">
+      <h2>${heading}</h2>
+      <img src="${URL.createObjectURL(photo)}" alt="${heading}">
+      <p>${description}</p>
+    </div>
+  `;
+
+  postsContainer.insertAdjacentHTML('beforeend', postHTML);
+  newPostForm.reset();
+  newPostForm.style.display = 'none';
+});
