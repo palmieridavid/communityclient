@@ -9,7 +9,24 @@
   <body>
     <header>
       <h1>Volunteering Opportunities Near Me</h1>
-      <button id="add-ad-button">Add an Advertisement</button>
+      <button id="openFormButton">Add An Opportunity</button> 
+    
+     <form id="newPostForm" style="display:none;">
+        <label>Photo:</label>
+        <input type="file" id="photoInput">
+
+        <label>Heading:</label>
+        <input type="text" id="headingInput">
+
+        <label>Description:</label>
+        <textarea id="descriptionInput"></textarea>
+
+        <button type="submit">Submit</button>
+     </form>
+
+    <div id="postsContainer">
+      <!-- Posts will be added here dynamically -->
+    </div>
     </header>
     <main>
       <div id="ads-container">
@@ -25,3 +42,8 @@
     </footer>
   </body>
 </html>
+
+
+
+
+
